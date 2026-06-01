@@ -10,6 +10,15 @@
     #   3. 'CustomerSettings.psd1' er udelukket fra Git via .gitignore,
     #      så følsomme værdier havner aldrig i versionsstyringen.
     #
+    # Git vs. OneDrive:
+    #   - I Git: kun denne SKABELON committes (pladsholdere).
+    #   - Lokalt: den rigtige fil med vpn.kunde.dk:443 ligger kun på din maskine.
+    #   - I OneDrive: hele mappen synkes – risiko for at rigtige serveradresser
+    #     deles utilsigtet eller overskrives uden historik.
+    #
+    # Invoke-AppDeployToolkit.ps1 læser CustomerSettings.psd1 og falder
+    # tilbage til denne Example-fil, hvis den lokale fil ikke findes.
+    #
     # SSL-VPN-tunnellen oprettes i FortiClient i Post-Install-fasen.
     # ============================================================
 
