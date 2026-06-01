@@ -4,6 +4,13 @@ Deployment-pakke til **Fortinet FortiClient VPN 7.4.3.8758**, bygget med [PSAppD
 
 > **Bemærk:** Kundespecifikke værdier (VPN-navn, beskrivelse og serveradresse) ligger i `Config\CustomerSettings.psd1`, som holdes **uden for Git**. Kopiér `Config\CustomerSettings.Example.psd1` til `Config\CustomerSettings.psd1` og udfyld de rigtige værdier før udrulning.
 
+## Undervisning: Git vs. OneDrive
+
+Repoet indeholder forberedt demomateriale til at vise fordele ved Git frem for OneDrive-synk. Start her:
+
+- [docs/undervisning/](docs/undervisning/) – lab og commit-oversigt til sessionen
+- [docs/Fra-OneDrive-til-Git.md](docs/Fra-OneDrive-til-Git.md) – fuld teori og arbejdsgang
+
 ---
 
 ## Indhold

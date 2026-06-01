@@ -18,6 +18,7 @@
 10. [Kom godt i gang – trin for trin](#10-kom-godt-i-gang--trin-for-trin)
 11. [Cheat sheet – de vigtigste kommandoer](#11-cheat-sheet--de-vigtigste-kommandoer)
 12. [Ordliste](#12-ordliste)
+13. [Se det i praksis](#13-se-det-i-praksis)
 
 ---
 
@@ -381,6 +382,18 @@ git push -u origin fix/vpn-sso-registry
 - **Push / Pull** – sende til / hente fra remote.
 - **Tag** – et navngivet punkt i historikken, typisk en release.
 - **`.gitignore`** – liste over filer Git skal ignorere.
+
+---
+
+## 13. Se det i praksis
+
+I dette repository er der lagt en **forberedt commit-historik** ind, så I kan gå fra teori til konkrete eksempler uden at improvisere under sessionen.
+
+1. Åbn [docs/undervisning/commit-oversigt.md](undervisning/commit-oversigt.md) – manuskript: hvilken commit viser hvad.
+2. Kør `git log --oneline --graph` i roden af repoet.
+3. Brug `git show <hash>` på commits fra tabellen (især port-rettelsen i demo-config).
+
+Demofiler ligger under `examples/git-demo/` og påvirker ikke den rigtige deployment-pakke.
 
 ---
 
