@@ -1,0 +1,84 @@
+# ==============================================================================
+# .gitignore – FortiClient VPN deployment-pakke (PSAppDeployToolkit)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Kundespecifikke / følsomme værdier
+# ------------------------------------------------------------------------------
+# Den rigtige kundekonfiguration må ALDRIG i Git. Kun skabelonen committes.
+Config/CustomerSettings.psd1
+!Config/CustomerSettings.Example.psd1
+
+# ------------------------------------------------------------------------------
+# Hemmeligheder & nøgler
+# ------------------------------------------------------------------------------
+*.env
+.env
+.env.*
+secrets.*
+*.secret
+*.pfx
+*.p12
+*.pem
+*.key
+id_rsa
+id_rsa.*
+*.ppk
+credentials.*
+*credential*
+*.pwd
+
+# ------------------------------------------------------------------------------
+# Store binære installationskilder – distribueres separat (Intune/Release)
+# ------------------------------------------------------------------------------
+Files/*.msi
+Files/*.exe
+Files/*.msp
+Files/*.mst
+Files/*.zip
+Files/*.cab
+Files/*.iso
+# Behold mappen + instruktionen, så strukturen er tydelig i repoet.
+!Files/Add Setup Files Here.txt
+
+# ------------------------------------------------------------------------------
+# Logs & PSADT-output
+# ------------------------------------------------------------------------------
+*.log
+Logs/
+SoftwareCache/
+outputs/
+
+# ------------------------------------------------------------------------------
+# PowerShell midlertidige filer
+# ------------------------------------------------------------------------------
+*.tmp
+*.bak
+*.ps1~
+
+# ------------------------------------------------------------------------------
+# Windows / OneDrive systemfiler
+# ------------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+# OneDrive konflikt-kopier (det vi gerne vil væk fra!)
+*-*PC*.psd1
+*-*PC*.ps1
+* (konflikt*).* 
+
+# ------------------------------------------------------------------------------
+# macOS (hvis nogen redigerer på Mac)
+# ------------------------------------------------------------------------------
+.DS_Store
+
+# ------------------------------------------------------------------------------
+# Editor / IDE
+# ------------------------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.suo
+*.user
