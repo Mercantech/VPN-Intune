@@ -6,7 +6,11 @@ on:
       - '**.ps1'
       - '**.psd1'
       - '.github/workflows/powershell-lint.yml'
-
+  push:
+    paths:
+      - '**.ps1'
+      - '**.psd1'
+      - '.github/workflows/powershell-lint.yml'
 jobs:
   psscriptanalyzer:
     runs-on: windows-latest
