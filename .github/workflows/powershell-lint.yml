@@ -1,0 +1,43 @@
+name: PowerShell lint
+
+on:
+  pull_request:
+    paths:
+      - '**.ps1'
+      - '**.psd1'
+      - '.github/workflows/powershell-lint.yml'
+
+jobs:
+  psscriptanalyzer:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
+
+      - name: Analyze deployment script
+        shell: pwsh
+        run: |
+          $errors = Invoke-ScriptAnalyzer -Path 'Invoke-AppDeployToolkit.ps1' -Severity Error
+          if ($errors) {
+            $errors | Format-List
+            exit 1
+          }
+
+      - name: Analyze examples
+        shell: pwsh
+        run: |
+          if (Test-Path 'examples') {
+            $errors = Get-ChildItem -Path 'examples' -Recurse -Include '*.ps1','*.psd1' |
+              ForEach-Object { Invoke-ScriptAnalyzer -Path $_.FullName -Severity Error } |
+              Where-Object { $_ }
+            if ($errors) {
+              $errors | Format-List
+              exit 1
+            }
+          }
