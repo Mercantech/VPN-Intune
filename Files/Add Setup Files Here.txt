@@ -1,0 +1,3 @@
+Placér FortiClient MSI og hotfix.exe i denne mappe før udrulning.
+
+Disse filer er udelukket fra Git via .gitignore – se README.md i samme mappe.
