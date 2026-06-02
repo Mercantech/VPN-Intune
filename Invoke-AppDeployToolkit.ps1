@@ -204,8 +204,6 @@ function Install-ADTDeployment
     $appVersion = $adtSession.AppVersion
     $regPath = "HKEY_LOCAL_MACHINE\SOFTWARE\netIP\$appName"
 
-
-    %¤#
     # Add Comment to the log that the install was successful.
     Write-ADTLogEntry -Message "Installation of [$($adtSession.AppName) $($adtSession.AppVersion)] was successful." -Severity 1
 
