@@ -211,6 +211,8 @@ function Install-ADTDeployment
     {
         Show-ADTInstallationPrompt -Message 'You can customize text to appear at the end of an install or remove it completely for unattended installations.' -ButtonRightText 'OK' -Icon Information -NoWait
     }
+
+    ## Branding
 }
 
 function Uninstall-ADTDeployment
